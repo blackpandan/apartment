@@ -4,9 +4,9 @@
 
 <template>
   <main class="main">
-    <div>
-      <img />
-    </div>
+    <section class="slideshow">
+      <img class="slideshow__image" src="../assets/back.jpeg" alt="">
+    </section>
 
     <section class="top">
       <h1 class="headingText text--header">WELCOME TO DE-DOMS</h1>
@@ -15,9 +15,6 @@
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vero fugit laborum aliquam enim, reprehenderit rem. Consectetur cumque perspiciatis repellendus, veritatis voluptatem ut laboriosam. Aspernatur ipsam tenetur cupiditate id culpa?</p>
     </section>
   
-    <section>
-
-    </section>
 
     <section class="rooms">
       <RoomCard />
@@ -52,7 +49,34 @@
   .top{
     width: 100%;
     text-align: center;
+    padding: 7em 1em 2em 1em;
   }
 
+}
+
+.slideshow{
+  position: relative;
+  width: 100%;
+  height: 70vh;
+
+  &::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+  }
+
+
+  &__image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 </style>
