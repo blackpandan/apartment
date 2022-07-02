@@ -21,8 +21,16 @@
       <RoomCard />
     </section>
   
-    <section class="testimonial">
-
+    <section class="testimonial slideshow">
+    <img src="../assets/back.jpeg" class="slideshow__image" alt="">
+    <div class="testimonial__texts">
+      <p class="testimonial__texts-header">WHAT THE CLIENT SAYS</p>
+      <p class="testimonial__texts-normal">this are reviews by our clients</p>
+    </div>
+    <div>
+      <p>clients words</p>
+      <p>- client name</p>
+    </div>
     </section>
   </main>
 </template>
@@ -68,7 +76,7 @@
 .slideshow{
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 60vh;
 
   &::before{
     content: "";
