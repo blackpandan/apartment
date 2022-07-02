@@ -30,10 +30,14 @@
 <style lang="scss">
 .text{
     &--header{
-      color: var(--color-heading);
       font-size: calc(1em + 3vmin);
-      color: #F27507;
+      color: var(--color-orange);
       font-weight: 600;
+    }
+
+    &--subheader{
+      font-size: calc(1em + 1.5vmin);
+
     }
 
     &--subheader2{
