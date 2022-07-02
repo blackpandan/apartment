@@ -9,9 +9,10 @@
     </section>
 
     <section class="top">
-      <h1 class="headingText text--header">WELCOME TO DE-DOMS</h1>
-      <h3 class="text--subheader2">HOME MEETS COMFORT</h3>
-      <br />
+      <div class="top__header">
+        <h1 class="headingText text--header">WELCOME TO DE-DOMS</h1>
+        <h3 class="text--subheader2">HOME MEETS COMFORT</h3>
+      </div>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vero fugit laborum aliquam enim, reprehenderit rem. Consectetur cumque perspiciatis repellendus, veritatis voluptatem ut laboriosam. Aspernatur ipsam tenetur cupiditate id culpa?</p>
     </section>
   
@@ -31,6 +32,8 @@
     &--header{
       color: var(--color-heading);
       font-size: calc(1em + 3vmin);
+      color: #F27507;
+      font-weight: 600;
     }
 
     &--subheader2{
@@ -49,7 +52,11 @@
   .top{
     width: 100%;
     text-align: center;
-    padding: 7em 1em 2em 1em;
+    padding: 7em 3vw 2em 3vw;
+
+    &__header{
+      padding: 0 0 3em 0;
+    }
   }
 
 }

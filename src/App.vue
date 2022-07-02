@@ -1,6 +1,57 @@
 <script setup>
   import { RouterLink, RouterView } from 'vue-router'
   import Bottom from './components/Bottom.vue'
+  import { nextTick, onMounted } from 'vue';
+  import { ref } from 'vue';
+
+let userTheme = ref("dark")
+
+function setTheme(theme) {
+  console.log("happy");
+  if(theme == "dark"){
+    nextTick(()=>{ document.documentElement.setAttribute("data-theme", "dark")
+    userTheme.value = "dark";
+    localStorage.setItem("theme", theme);
+    })
+
+  }else if(theme == "light"){
+    nextTick(()=>{ document.documentElement.setAttribute("data-theme", "light")
+    userTheme.value = "light";
+    localStorage.setItem("theme", theme);
+    })
+  }
+}
+
+/*function getMediaPreference() {
+  const hasDarkPreference = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+    
+  ).matches;
+  if (hasDarkPreference) {
+        document.documentElement.setAttribute("data-theme", "dark")    
+        return "dark";
+      
+  } else {
+        document.documentElement.setAttribute("data-theme", "light")    
+        return "light";
+      
+  }
+  
+};*/
+
+onMounted(()=>{
+  let theme = localStorage.getItem("theme")
+  if (theme == null){
+    setTheme("light");
+    localStorage.setItem("theme", "light");
+  }else{
+    setTheme(theme);
+  }
+ // const initUserTheme = getMediaPreference();
+  // setTheme();
+})
+
+
 </script>
 
 <template>
@@ -9,6 +60,8 @@
       <nav class="nav">
         <RouterLink to="/" class="link--nav">Home</RouterLink>
         <RouterLink to="/about" class="link--nav">About</RouterLink>
+          <span v-show="userTheme == 'dark'" @click="setTheme('light')" class="changer">🌙</span>
+          <span v-show="userTheme == 'light'" @click="setTheme('dark')" class="changer">☀️</span>
       </nav>
   </header>
 
@@ -29,7 +82,7 @@
   position: sticky;
   top: 0;
   z-index: 12;
-  background-color: var(--color-background-mute);
+  background-color: var(--color-background);
   width: 100%;
   display: flex;
   padding: 1em 1em 1em 1em;
@@ -80,5 +133,9 @@
     color: var(--color-text);
     font-size: 1em;
   }
+}
+
+.changer{
+  cursor: pointer;
 }
 </style>
