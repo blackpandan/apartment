@@ -7,26 +7,30 @@
   <main class="main">
     <section class="slideshow">
       <img class="slideshow__image" src="../assets/back2.jpeg" alt="">
-      <p class="slideshow__intro">You are exactly where you need to be, stay and relax with us, and be recharged for that rigmarole again.</p>
-      <a href="#" class="slideshow__button">check rooms</a>
+      <h1 class="headingText slideshow__header">WELCOME TO DE-DOMS</h1>
+      <p class="slideshow__intro">You are exactly where you need to be, the best apartment you can find, stay and relax with us, and be recharged for that rigmarole again.</p>
+      <a href="#roomsHeader" class="slideshow__button">check rooms</a>
     </section>
 
     <section class="top">
       <div class="top__header">
-        <h1 class="headingText text--header">WELCOME TO DE-DOMS</h1>
-        <h3 class="text--subheader2">HOME MEETS COMFORT</h3>
+        <h1 class="headingText text--header">DE-DOMS APARTMENT</h1>
+        <h2 class="text--subheader2">HOME MEETS COMFORT</h2>
       </div>
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vero fugit laborum aliquam enim, reprehenderit rem. Consectetur cumque perspiciatis repellendus, veritatis voluptatem ut laboriosam. Aspernatur ipsam tenetur cupiditate id culpa?</p>
     </section>
   
     <section class="showOff">
-     <img src="" alt=""> 
-     <img src="" alt=""> 
-     <img src="" alt=""> 
-     <img src="" alt=""> 
+      <div class="showOff__box">
+     <img class="showOff__one showOff__image" src="../assets/back.jpeg" alt=""> 
+     <img class="showOff__two showOff__image" src="../assets/back2.jpeg" alt=""> 
+     <img class="showOff__three showOff__image" src="../assets/back.jpeg" alt=""> 
+     <img class="showOff__four showOff__image" src="../assets/back2.jpeg" alt=""> 
+      </div>
     </section>
 
-    <section class="rooms">
+    <h3 id="roomsHeader" class="rooms__header headingText">Available Rooms</h3>
+    <section id="rooms" class="rooms">
       <RoomCard v-for="i in 5" :index="i"/>
     </section>
 
@@ -40,7 +44,7 @@
 .text{
     &--header{
       font-size: calc(1em + 3vmin);
-      color: var(--color-orange);
+      // color: var(--color-orange);
       font-weight: 600;
     }
 
@@ -72,12 +76,57 @@
     }
   }
 
+  .showOff{
+    width: 90%;
+    height: 50vh;
+    margin: 0 0 15vh 0;
+
+    &__box{
+    display: grid;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    grid-template-areas: "one one two two"
+                        "one one three four";
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: 25vh 25vh;
+    gap: 1em 1em;
+
+    }
+
+    &__image{
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    &__one{
+      grid-area: one;
+    }
+
+    &__two{
+      grid-area: two;
+    }
+    
+    &__three{
+      grid-area: three;
+    }
+
+    &__four{
+      grid-area: four;
+    }
+    
+  
+
+  }
+
+
 }
 
 .slideshow{
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,6 +145,12 @@
     z-index: 1;
   }
 
+
+  &__header{
+    color: rgba(240, 240, 240);
+    font-size: calc(3em + 1vmin);
+    z-index: 2;
+  }
 
   &__image{
     position: absolute;
@@ -122,11 +177,11 @@
   }
 
   &__intro{
-    color: var(--vt-c-white-mute);
+    color: rgba($color: white, $alpha: 0.8);
     z-index: 2;
-    padding: 0 10vw 2em 10vw;
+    padding: 0 20vw 2em 20vw;
     text-align: center;
-    font-size: calc(1em + 1.2vmin)
+    font-size: calc(1em + 1vmin)
   }
   
 }
@@ -134,9 +189,16 @@
 .rooms{
   display: flex;
   flex-direction: column;
-  row-gap: 15vh;
-  width: 100%;
+  row-gap: 10vh;
+  align-items: center;
+  width: 85%;
   padding: 0 6vw 15vh 6vw;
+
+  &__header{
+    font-size: calc(1em + 1.5vmin);
+    margin: 0 0 1em 0;
+    font-weight: 500;
+  }
 }
 @media screen and (max-width: 700px){
   .rooms{

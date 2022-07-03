@@ -19,7 +19,7 @@ function checkType(index){
 <template>
   <div :class="['card', {'oddCard': checkType(index)}]" >
     <div class="card__item">
-      <img src="../assets/back.jpeg" alt="" class="card__item card__image">
+      <img src="../assets/back2.jpeg" alt="" class="card__item card__image">
     </div>
     <div :class="['card__item', 'card__text', {'oddText': checkType(index)}]">
       <h2 class="text--subheader">Room Type</h2>
@@ -39,12 +39,13 @@ function checkType(index){
   position: relative;
   width: 100%;
   display: flex;
-  height: 40vh;
+  height: 400px;
   overflow: hidden;
   justify-content: center;
   background-color: rgba(200, 200, 200, 0.1);
   padding: 1em;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
+  column-gap: 3vw;
 
   &__item{
     flex-basis: 50%;
@@ -84,7 +85,7 @@ function checkType(index){
   }
 
   &__text{
-    padding: 0 2vw 2em 6vw;
+    padding: 0 2vw 2em 0;
 
     &-info{
       color: var(--color-text);
@@ -107,6 +108,11 @@ function checkType(index){
   padding: 0 0 0 0;
 }
 
+@media screen and (max-width: 1300px){
+  .card{
+    width: 85%;
+  }
+}
 @media screen and (max-width: 780px){
   .card{
     flex-direction: column;
