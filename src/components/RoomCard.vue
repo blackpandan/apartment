@@ -1,11 +1,125 @@
 <script setup>
+import { defineProps } from 'vue';
+
+const props = defineProps({
+  index: Number
+});
+
+function checkType(index){
+  if(index % 2 == 0){
+    return true;
+  }
+  return false;
+}
+
+
 
 </script>
 
 <template>
-  <div>i am a room</div>
+  <div :class="['card', {'oddCard': checkType(index)}]" >
+    <div class="card__item">
+      <img src="../assets/back.jpeg" alt="" class="card__item card__image">
+    </div>
+    <div :class="['card__item', 'card__text', {'oddText': checkType(index)}]">
+      <h2 class="text--subheader">Room Type</h2>
+      <p class="card__text-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam facere optio deserunt voluptatum ipsum saepe minus blanditiis eos mollitia eaque exercitationem expedita fugit ea excepturi quo accusamus, alias libero perferendis!</p>
+      <br />
+    <div class="card__price">
+      <p class="card__price-tag">&#8358;150000</p>
+    </div>
+    <br />
+      <p class="card__text-button">book now</p>
+    </div>
+  </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
+.card{
+  position: relative;
+  width: 100%;
+  display: flex;
+  height: 40vh;
+  overflow: hidden;
+  justify-content: center;
+  background-color: rgba(200, 200, 200, 0.1);
+  padding: 1em;
+  flex-wrap: wrap;
 
+  &__item{
+    flex-basis: 50%;
+    z-index: 9;
+  }
+
+  &__price{
+    /*position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+    z-index: 10;*/
+    background-color: var(--color-orange);
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    width: fit-content;
+    height: fit-content;
+    // transform: translate(-50%, -50%);
+    border-radius: 0.4em;
+
+    &-tag{
+      color: var(--vt-c-white-soft);
+      font-size: calc(0.6em + 1vmin)
+
+    }
+  }
+
+  &__image{
+    object-fit: cover;
+    width: 100%;
+    min-width: 300px;
+    height: 100%;
+
+    &:hover{
+      object-position: top bottom;
+    }
+  }
+
+  &__text{
+    padding: 0 2vw 2em 6vw;
+
+    &-info{
+      color: var(--color-text);
+    }
+
+    &-button{
+      width: fit-content;
+      padding: 0.2em 2em 0.2em 2em;
+      border: 1px solid var(--color-orange);
+      border-radius: 0.5em;
+    }
+  }
+}
+
+.oddCard{
+  flex-direction: row-reverse;
+}
+
+.oddText{
+  padding: 0 0 0 0;
+}
+
+@media screen and (max-width: 780px){
+  .card{
+    flex-direction: column;
+    height: auto;
+    width: fit-content;
+
+    &__image{
+      height: 40vh;
+    }
+
+    &__text{
+      padding: 0 0 0 0;
+    }
+  }
+}
 </style>
