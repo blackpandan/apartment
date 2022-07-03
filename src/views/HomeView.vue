@@ -7,6 +7,7 @@
   <main class="main">
     <section class="slideshow">
       <img class="slideshow__image" src="../assets/back2.jpeg" alt="">
+      <p class="slideshow__intro">You are exactly where you need to be, stay and relax with us, and be recharged for that rigmarole again.</p>
       <a href="#" class="slideshow__button">check rooms</a>
     </section>
 
@@ -18,6 +19,12 @@
       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vero fugit laborum aliquam enim, reprehenderit rem. Consectetur cumque perspiciatis repellendus, veritatis voluptatem ut laboriosam. Aspernatur ipsam tenetur cupiditate id culpa?</p>
     </section>
   
+    <section class="showOff">
+     <img src="" alt=""> 
+     <img src="" alt=""> 
+     <img src="" alt=""> 
+     <img src="" alt=""> 
+    </section>
 
     <section class="rooms">
       <RoomCard v-for="i in 5" :index="i"/>
@@ -85,7 +92,7 @@
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.55);
     z-index: 1;
   }
 
@@ -102,13 +109,26 @@
     width: fit-content;
     height: fit-content;
     color: var(--vt-c-white-mute);
-    padding: 0.8em 4em 0.8em 4em;
+    padding: 0.55em 4em 0.55em 4em;
     text-decoration: none;
-    border-radius: 0.8em;
+    border-radius: 0.6em;
     z-index: 2;
-    font-size: calc(0.6em + 1vmin);
+    font-size: calc(0.7em + 1vmin);
+
+    &:hover{
+      background-color: darken(rgb(226, 107, 3), 5)
+    }
 
   }
+
+  &__intro{
+    color: var(--vt-c-white-mute);
+    z-index: 2;
+    padding: 0 10vw 2em 10vw;
+    text-align: center;
+    font-size: calc(1em + 1.2vmin)
+  }
+  
 }
 
 .rooms{
