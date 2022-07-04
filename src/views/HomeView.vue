@@ -5,7 +5,6 @@
   import { runAnimation } from '../animate.js';
   import { timer, checkActive } from '../slider.js'; 
   import { animateSlides } from '../animate.js';
-  import back2 from '../assets/back2.jpeg'
 
 function getImageUrl(name, ext) {
   return new URL(`../assets/${name}.${ext}`, import.meta.url).href
@@ -15,8 +14,7 @@ function getImageUrl(name, ext) {
 let images = ref([
   {
     name: "back2",
-    //url: getImageUrl("back2", "jpeg")
-    url: back2
+    url: getImageUrl("back2", "jpeg")
 
   },
   {
