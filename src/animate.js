@@ -58,7 +58,6 @@ const runAnimation = ()=>{
       ease: 'back',
     'scrollTrigger': {
       trigger: "#topHeader",
-      markers: true,
       start: "top 55%",
       end: "bottom 95%",
       toggleActions: "restart restart restart restart",
