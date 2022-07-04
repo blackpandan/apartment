@@ -1,52 +1,35 @@
 <script setup>
-  import { ref, onMounted, nextTick } from 'vue';
+  import { ref, onMounted } from 'vue';
+  import { timer, setActive, checkActive } from '../slider.js';
 
-    let testimonials = ref([
-      {
-        name: "faith",
-        word: "perfect hotel to stay"
-      },
-      {
-        name: "bandolo",
-        word: "perfect ito stay"
-      }
-    ]); 
-
-let active = ref(0);
-let weird = null;
-
-function timer(){
-  return setInterval(()=>{
-    nextTick(()=>{
-    if(active.value == (testimonials.value.length - 1)){
-      active.value = 0;
-    }else{
-      active.value++;
+  let testimonials = ref([
+    {
+      name: "faith",
+      word: "perfect hotel to stay"
+    },
+    {
+      name: "bandolo",
+      word: "perfect ito stay"
     }
-    })
-  }, 5000)
+  ]); 
+
+  let active = ref(0);
+  let weird = null;
+
+
+function check(index){
+  return checkActive(index, active);
 }
 
-function checkActive(index){
-  if(index == active.value) {
-    return true;
+
+function setA(index){
+  weird = setActive(index, active, weird, testimonials);
   }
 
-  return false;
-}
+  onMounted(()=>{
+    weird = timer(active, testimonials);
+  });
 
-function setActive(index){
-  clearInterval(weird);
-  weird = timer();
-  if(active.value != index){
-    active.value = index;
-  }
-}
-
-
-onMounted(()=>{
-  weird = timer();
-});
 
 </script>
 
@@ -58,12 +41,12 @@ onMounted(()=>{
       <!-- <p class="testimonial__texts-normal">this are reviews by our clients</p> -->
     </div>
     <div class="testimonial__boxControl">
-    <div class="testimonial__box" v-for="(review, index) in testimonials" :key=index v-show="checkActive(index)">
+    <div class="testimonial__box" v-for="(review, index) in testimonials" :key=index v-show="check(index)">
       <p class="testimonial__box-word">{{ review.word }}</p>
       <p class="testimonial__box-name">- {{ review.name }}</p>
     </div>
     <div class="testimonial__box-dots">
-      <span :class="['testimonial__box-dot', {'testimonial__box-dotActive': checkActive(n-1)}]" v-for="n in testimonials.length" @click="setActive(n-1)" :data-id="n"></span>
+      <span :class="['testimonial__box-dot', {'testimonial__box-dotActive': check(n-1)}]" v-for="n in testimonials.length" @click="setA(n-1)" :data-id="n"></span>
     </div>
     </div>
     </section>

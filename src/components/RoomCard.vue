@@ -17,7 +17,13 @@ function checkType(index){
 </script>
 
 <template>
-  <div :class="['card', {'oddCard': checkType(index)}]" >
+  <div :class="[
+    'card', 
+    {
+      'oddCard': checkType(index),
+      'normalRow': !checkType(index),
+    }
+    ]" >
     <div class="card__item">
       <img src="../assets/back2.jpeg" alt="" class="card__item card__image">
     </div>

@@ -66,6 +66,57 @@ const runAnimation = ()=>{
   );
 
 
+
 };
 
-export {runAnimation};
+
+const animateSlides = (slide)=>{
+  gsap.fromTo(slide.value, 
+    {
+      opacity: 0.5
+    },
+    {
+      opacity: 1,
+      duration: 4,
+    }
+  ); 
+};
+
+const deanimateSlides = (slide)=>{
+  gsap.fromTo(slide.value, 
+    {
+      opacity: 1
+    },
+    {
+      opacity: 0,
+      duration: 4,
+    }
+  ); 
+};
+
+const animateRoom = (id) => {
+  gsap.fromTo('.normalRow', 
+    {
+      xPercent: 50,
+      opacity: 0,
+      skewY: 10,
+    },
+    {
+      xPercent: 0,
+      opacity: 1,
+      skewY: 0,
+      duration: 2,
+      ease: 'elastic',
+    'scrollTrigger': {
+      trigger: id,
+      start: "top 55%",
+      end: "bottom 95%",
+      markers: true,
+      toggleActions: "restart none none none",
+      }
+    },   
+  );
+
+}
+export {runAnimation, animateSlides, deanimateSlides, animateRoom};
+

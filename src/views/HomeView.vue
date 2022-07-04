@@ -1,11 +1,39 @@
 <script setup>
   import RoomCard from '../components/RoomCard.vue';
   import Testimonial from '../components/Testimonial.vue';
-  import { onMounted } from 'vue';
-  import { runAnimation } from '../animate.js'
-  
+  import { onMounted, ref } from 'vue';
+  import { runAnimation } from '../animate.js';
+  import { timer, checkActive } from '../slider.js'; 
+  import { animateSlides } from '../animate.js';
+
+let images = ref([
+  {
+    name: "back2",
+    url: "/src/assets/back2.jpeg"
+
+  },
+  {
+    name: "back",
+    url: "/src/assets/back.jpeg"
+  }
+]);
+
+let active = ref(0);
+let slides = ref(null);
+
+function check(index){
+  let checked = checkActive(index, active);
+
+  checked ? animateSlides(slides) : checked = false;
+
+  return checked;
+};
+
+
 onMounted(()=>{
 
+  timer(active, images); 
+  animateSlides(slides);
   runAnimation();
 
 
@@ -15,7 +43,7 @@ onMounted(()=>{
 <template>
   <main class="main">
     <section id="slide" class="slideshow">
-      <img class="slideshow__image" src="../assets/back2.jpeg" alt="">
+      <img class="slideshow__image" v-for="(image, index) in images" :id="index" ref="slides" v-show="check(index)" :key="index" :src="image.url" :alt="image.name">
       <h1 id="slideHeader" class="headingText slideshow__header">WELCOME TO DE-DOMS</h1>
       <p id="slideIntro" class="slideshow__intro">You are exactly where you need to be, the best apartment you can find, stay and relax with us, and be recharged for that rigmarole again.</p>
       <a href="#roomsHeader" id="slideButton" class="slideshow__button">check rooms</a>
@@ -150,7 +178,7 @@ onMounted(()=>{
     bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.55);
+    background-color: rgba(0, 0, 0, 0.65);
     z-index: 1;
   }
 

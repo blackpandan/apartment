@@ -7,7 +7,9 @@
 let userTheme = ref("dark")
 
 function setTheme(theme) {
-  console.log("happy");
+
+  console.log("the dev behind the flare :) https://devfate.com");
+  
   if(theme == "dark"){
     nextTick(()=>{ document.documentElement.setAttribute("data-theme", "dark")
     userTheme.value = "dark";
