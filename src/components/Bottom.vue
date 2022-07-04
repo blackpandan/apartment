@@ -68,7 +68,7 @@
   &__links{
     padding: 5vh 1em 0 1em;
     display: flex;
-    column-gap: 1vw;
+    column-gap: 2.5vw;
     color: blue;
       color: var(--color-footer-icon); 
 
@@ -81,7 +81,7 @@
       }
 
     &-icon{
-      font-size: calc(1em + 1vmin);
+      font-size: calc(1.3em + 2vmin);
     }
   }
 
