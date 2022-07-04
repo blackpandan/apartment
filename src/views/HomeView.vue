@@ -6,15 +6,21 @@
   import { timer, checkActive } from '../slider.js'; 
   import { animateSlides } from '../animate.js';
 
+
+function getImageUrl(name, ext) {
+  return new URL(`./dir/${name}.${ext}`, import.meta.url).href
+  
+}
+
 let images = ref([
   {
     name: "back2",
-    url: "/src/assets/back2.jpeg"
+    url: getImageUrl("back2", "jpeg")
 
   },
   {
     name: "back",
-    url: "/src/assets/back.jpeg"
+    url: getImageUrl("back", "jpeg")
   }
 ]);
 
