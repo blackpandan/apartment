@@ -168,6 +168,7 @@ onMounted(()=>{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: black;
 
   &::after{
     content: "";

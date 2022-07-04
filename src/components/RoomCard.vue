@@ -35,7 +35,7 @@ function checkType(index){
       <p class="card__price-tag">&#8358;150000</p>
     </div>
     <br />
-      <p class="card__text-button">book now</p>
+      <a href="#" class="card__text-button">book now</a>
     </div>
   </div>
 </template>
@@ -99,9 +99,17 @@ function checkType(index){
 
     &-button{
       width: fit-content;
-      padding: 0.2em 2em 0.2em 2em;
+      padding: 0.4em 2em 0.4em 2em;
       border: 1px solid var(--color-orange);
       border-radius: 0.5em;
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--color-text);
+
+      &:hover{
+        background-color: var(--color-orange);
+        color: var(--vt-c-white-soft);
+      }
     }
   }
 }
