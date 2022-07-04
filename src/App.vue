@@ -59,7 +59,7 @@ onMounted(()=>{
       <h1 class="headingText logo">De-Doms</h1>
       <nav class="nav">
         <RouterLink to="/" class="link--nav">Home</RouterLink>
-        <RouterLink to="/about" class="link--nav">About</RouterLink>
+        <!-- <RouterLink to="/about" class="link--nav">About</RouterLink> -->
           <span v-show="userTheme == 'dark'" @click="setTheme('light')" class="changer">🌙</span>
           <span v-show="userTheme == 'light'" @click="setTheme('dark')" class="changer">☀️</span>
       </nav>
