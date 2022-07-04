@@ -1,15 +1,49 @@
 <script setup>
   import RoomCard from '../components/RoomCard.vue';
   import Testimonial from '../components/Testimonial.vue';
+  import { gsap } from 'gsap';
+  import { onMounted } from 'vue';
+  
+onMounted(()=>{
+
+
+  gsap.fromTo(['#slideHeader', '#slideIntro'], 
+    {
+      y: 200,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 2,
+      ease: 'power4',
+    }
+  );
+
+  gsap.fromTo('#slideButton', 
+    {
+      x: 100,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      delay: 1,
+      duration: 1.3,
+      ease: 'elastic',
+    }
+  );
+
+});
 </script>
 
 <template>
   <main class="main">
     <section class="slideshow">
       <img class="slideshow__image" src="../assets/back2.jpeg" alt="">
-      <h1 class="headingText slideshow__header">WELCOME TO DE-DOMS</h1>
-      <p class="slideshow__intro">You are exactly where you need to be, the best apartment you can find, stay and relax with us, and be recharged for that rigmarole again.</p>
-      <a href="#roomsHeader" class="slideshow__button">check rooms</a>
+      <h1 id="slideHeader" class="headingText slideshow__header">WELCOME TO DE-DOMS</h1>
+      <p id="slideIntro" class="slideshow__intro">You are exactly where you need to be, the best apartment you can find, stay and relax with us, and be recharged for that rigmarole again.</p>
+      <a href="#roomsHeader" id="slideButton" class="slideshow__button">check rooms</a>
     </section>
 
     <section class="top">

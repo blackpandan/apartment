@@ -12,7 +12,7 @@
     <div class="footer__nav">
       <p class="text--subheader headingText footer__text--orange">Pages</p>
       <a href="/" class="footer__nav-link">home</a>
-      <!-- <a href="/about" class="footer__nav-link">about</a> -->
+      <a href="/about" class="footer__nav-link">about</a>
     </div>
     </div>
     <div class="footer__links">
