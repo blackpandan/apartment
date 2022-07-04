@@ -8,7 +8,7 @@
   import back2 from '../assets/back2.jpeg'
 
 function getImageUrl(name, ext) {
-  return new URL(`./dir/${name}.${ext}`, import.meta.url).href
+  return new URL(`../assets/${name}.${ext}`, import.meta.url).href
   
 }
 
