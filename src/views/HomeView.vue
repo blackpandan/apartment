@@ -1,45 +1,20 @@
 <script setup>
   import RoomCard from '../components/RoomCard.vue';
   import Testimonial from '../components/Testimonial.vue';
-  import { gsap } from 'gsap';
   import { onMounted } from 'vue';
+  import { runAnimation } from '../animate.js'
   
 onMounted(()=>{
 
+  runAnimation();
 
-  gsap.fromTo(['#slideHeader', '#slideIntro'], 
-    {
-      y: 200,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 2,
-      ease: 'power4',
-    }
-  );
-
-  gsap.fromTo('#slideButton', 
-    {
-      x: 100,
-      opacity: 0,
-    },
-    {
-      x: 0,
-      opacity: 1,
-      delay: 1,
-      duration: 1.3,
-      ease: 'elastic',
-    }
-  );
 
 });
 </script>
 
 <template>
   <main class="main">
-    <section class="slideshow">
+    <section id="slide" class="slideshow">
       <img class="slideshow__image" src="../assets/back2.jpeg" alt="">
       <h1 id="slideHeader" class="headingText slideshow__header">WELCOME TO DE-DOMS</h1>
       <p id="slideIntro" class="slideshow__intro">You are exactly where you need to be, the best apartment you can find, stay and relax with us, and be recharged for that rigmarole again.</p>
@@ -48,10 +23,10 @@ onMounted(()=>{
 
     <section class="top">
       <div class="top__header">
-        <h1 class="headingText text--header">DE-DOMS APARTMENT</h1>
-        <h2 class="text--subheader2">HOME MEETS COMFORT</h2>
+        <h1 id="topHeader" class="headingText text--header">DE-DOMS APARTMENT</h1>
+        <h2 id="topSub" class="text--subheader2">HOME MEETS COMFORT</h2>
       </div>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vero fugit laborum aliquam enim, reprehenderit rem. Consectetur cumque perspiciatis repellendus, veritatis voluptatem ut laboriosam. Aspernatur ipsam tenetur cupiditate id culpa?</p>
+      <p id="topText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vero fugit laborum aliquam enim, reprehenderit rem. Consectetur cumque perspiciatis repellendus, veritatis voluptatem ut laboriosam. Aspernatur ipsam tenetur cupiditate id culpa?</p>
     </section>
   
     <section class="showOff">
