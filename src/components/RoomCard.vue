@@ -34,7 +34,7 @@ function checkType(index){
       <p class="card__price-tag">&#8358;150000</p>
     </div>
     <br />
-      <a href="#" class="card__text-button">book now</a>
+      <a href="https://wa.me/2348164648411?text=hello i want to book a room" target="blank" class="card__text-button">book now</a>
     </div>
   </div>
 </template>
