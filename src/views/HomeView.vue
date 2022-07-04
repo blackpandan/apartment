@@ -192,6 +192,7 @@ onMounted(()=>{
   &__header{
     color: rgba(240, 240, 240);
     font-size: calc(3em + 1vmin);
+    text-align: center;
     z-index: 2;
   }
 
@@ -243,9 +244,18 @@ onMounted(()=>{
     font-weight: 500;
   }
 }
-@media screen and (max-width: 700px){
+@media screen and (max-width: 780px){
   .rooms{
     row-gap: 15vh;
+  }
+
+  .slideshow{
+    &__header{
+      padding: 0 5vw 0 5vw;
+    }
+    &__intro{
+      padding: 0 5vw 2em 5vw;
+    }
   }
 }
 </style>

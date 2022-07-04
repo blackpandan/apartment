@@ -8,7 +8,10 @@ let userTheme = ref("dark")
 
 function setTheme(theme) {
 
-  console.log("the dev behind the flare :) https://devfate.com");
+  console.log(
+    "%cthe dev behind the flare 😁  %chttps://devfate.com", "color:orange; font-size: 2em", 
+    "color:red; font-size: 1.5em",
+  );
   
   if(theme == "dark"){
     nextTick(()=>{ document.documentElement.setAttribute("data-theme", "dark")
@@ -24,7 +27,7 @@ function setTheme(theme) {
   }
 }
 
-/*function getMediaPreference() {
+function getMediaPreference() {
   const hasDarkPreference = window.matchMedia(
         "(prefers-color-scheme: dark)"
     
@@ -39,18 +42,18 @@ function setTheme(theme) {
       
   }
   
-};*/
+};
 
 onMounted(()=>{
   let theme = localStorage.getItem("theme")
   if (theme == null){
-    setTheme("light");
-    localStorage.setItem("theme", "light");
+    // setTheme("light");
+    const initUserTheme = getMediaPreference();
+    setTheme(initUserTheme);
+    localStorage.setItem("theme", initUserTheme);
   }else{
     setTheme(theme);
   }
- // const initUserTheme = getMediaPreference();
-  // setTheme();
 })
 
 
