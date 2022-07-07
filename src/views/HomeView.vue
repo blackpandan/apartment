@@ -257,5 +257,18 @@ onMounted(()=>{
       padding: 0 5vw 2em 5vw;
     }
   }
+
+  .main{
+    .showOff{
+      &__box{
+        grid-template-areas: "one two"
+                             "three four";
+        grid-template-columns: repeat(2, 50%);
+        grid-template-rows: 20vh 20vh ;
+
+      }
+    }
+  
+  }
 }
 </style>
