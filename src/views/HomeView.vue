@@ -252,7 +252,7 @@ onMounted(()=>{
   .slideshow{
     &__header{
       padding: 0 5vw 0 5vw;
-      font-size: calc(2em + 1vmin);
+      font-size: calc(2.5em + 1vmin);
     }
     &__intro{
       padding: 0 5vw 2em 5vw;
