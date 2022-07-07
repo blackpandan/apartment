@@ -17,13 +17,10 @@
     </div>
     <div class="footer__links">
       <a href="https://www.facebook.com/dedomsapartment" target="blank" class="footer__links-link"><i class="fa-brands fa-facebook footer__links-icon"></i></a>
-
       <a href="https://twitter.com/DeApartments" target="blank" class="footer__links-link"><i class="fa-brands fa-twitter footer__links-icon"></i></a>
-
       <a href="https://www.instagram.com/de_doms_apartment/" target="blank" class="footer__links-link"><i class="fa-brands fa-instagram footer__links-icon"></i></a>
-      
-    <p class="footer__copyright">de-domsglobal 2022 &copy;</p>
     </div>
+    <p class="footer__copyright">de-domsglobal 2022 &copy;</p>
   </footer>
 </template>
 
