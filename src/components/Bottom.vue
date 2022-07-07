@@ -47,6 +47,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 4vw 0 4vw;
+    text-align: center;
   }
 
   &__nav{
