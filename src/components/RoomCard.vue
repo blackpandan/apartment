@@ -94,6 +94,11 @@ function checkType(index){
 
     &-info{
       color: var(--color-text);
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     &-button{
@@ -131,13 +136,24 @@ function checkType(index){
     flex-direction: column;
     height: auto;
     width: fit-content;
+    padding-bottom: 2em;
 
     &__image{
-      height: 40vh;
+      height: 34vh;
     }
 
     &__text{
       padding: 0 0 0 0;
+
+      &-info{
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+
+      }    
     }
   }
 }
