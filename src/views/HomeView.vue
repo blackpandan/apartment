@@ -6,6 +6,25 @@
   import { timer, checkActive } from '../slider.js'; 
   import { animateSlides } from '../animate.js';
 
+const listOfDetails = [
+  {
+    title: "kitchen",
+    url: getImageUrl("kitchen", "jpg")
+  },
+  {
+    title: "Bedroom",
+    url: getImageUrl("room", "jpg")
+  },
+  {
+    title: "Sitting",
+    url: getImageUrl("sitting", "jpg")
+  },
+  {
+    title: "Dinning",
+    url: getImageUrl("dinning", "jpg")
+  },
+]
+
 function getImageUrl(name, ext) {
   return new URL(`../assets/${name}.${ext}`, import.meta.url).href
   
@@ -49,17 +68,42 @@ onMounted(()=>{
   <main class="main">
     <section id="slide" class="slideshow">
       <img class="slideshow__image" v-for="(image, index) in images" :id="index" ref="slides" v-show="check(index)" :key="index" :src="image.url" :alt="image.name">
-      <h1 id="slideHeader" class="headingText slideshow__header">WELCOME TO DE-DOMS</h1>
-      <p id="slideIntro" class="slideshow__intro">You are exactly where you need to be, the best apartment you can find, stay and relax with us, and be recharged for that rigmarole again.</p>
+      <h1 id="slideHeader" class="headingText slideshow__header">WELCOME TO DE-DOMS GLOBAL</h1>
+      <p id="slideIntro" class="slideshow__intro">We are group of companies that render professional services in 
+      Serviced Apartments (doms  apartments),
+      Interior design (doms interiors),
+      Property sales ( doms properties ),
+      Tanker rentals and supplies (doms oil and gas)</p>
       <a href="#roomsHeader" id="slideButton" class="slideshow__button">check rooms</a>
     </section>
 
     <section class="top">
       <div class="top__header">
         <h1 id="topHeader" class="headingText text--header">DE-DOMS APARTMENT</h1>
-        <h2 id="topSub" class="text--subheader2">HOME MEETS COMFORT</h2>
+        <h2 id="topSub" class="text--subheader2">HOME OF LUXURY AND COMFORT</h2>
       </div>
-      <p id="topText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem vero fugit laborum aliquam enim, reprehenderit rem. Consectetur cumque perspiciatis repellendus, veritatis voluptatem ut laboriosam. Aspernatur ipsam tenetur cupiditate id culpa?</p>
+      <p id="topText">At de-doms apartments we give you nothing but the best serviced apartments deal with our luxurious and state of the art facilities to provide you with top notch comfort .
+We go the extra mile to ensure hospital and comfort to give you value for your money.
+      </p>
+      <br>
+      <br>
+<h2 class="text--subheader2">
+      OUR SERVICES:
+</h2>
+<p></p>All rooms en-suit, 24/7 power supply, Top notch security, Smart TV, Unlimited WiFi access, Dstv, Cable access, Well fitted kitchen, Washing machine, Modern furnishings, Fully air conditioned, Daily house keeping service, Secure parking space and ON Site maintenance.
+<!-- <p>Daily house keeping service</p> --> 
+<!-- <p>Secure parking space and</p> -->
+<!-- <p>Unlimited WiFi access</p> --> 
+<!-- <p>ON Site maintenance</p> -->
+<!-- <p>Fully air conditioned</p> -->
+<!-- <p>Modern furnishings</p> --> 
+<!-- <p>Washing machine</p> --> 
+<!-- <p>24/7 power supply</p> -->
+<!-- <p>Top notch security</p> --> 
+<!-- <p>All rooms en-suit</p> -->
+<!-- <p>Cable access</p> --> 
+<!-- <p>Smart TV</p> -->
+<!-- <p>Dstv</p> --> 
     </section>
   
     <section class="showOff">
@@ -73,7 +117,7 @@ onMounted(()=>{
 
     <h3 id="roomsHeader" class="rooms__header headingText">Available Rooms</h3>
     <section id="rooms" class="rooms">
-      <RoomCard v-for="i in 5" :index="i"/>
+      <RoomCard v-for="detail, index in listOfDetails" :detail="detail" :index="index"/>
     </section>
 
     <Testimonial />
@@ -114,7 +158,7 @@ onMounted(()=>{
     padding: 7em 6vw 12vh 6vw;
 
     &__header{
-      padding: 0 0 3em 0;
+      padding: 0 0 1vmin 0;
     }
   }
 
@@ -157,12 +201,7 @@ onMounted(()=>{
     &__four{
       grid-area: four;
     }
-    
-  
-
   }
-
-
 }
 
 .slideshow{

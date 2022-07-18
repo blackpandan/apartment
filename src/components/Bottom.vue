@@ -20,6 +20,7 @@
       <a href="https://twitter.com/DeApartments" target="blank" class="footer__links-link"><i class="fa-brands fa-twitter footer__links-icon"></i></a>
       <a href="https://www.instagram.com/de_doms_apartment/" target="blank" class="footer__links-link"><i class="fa-brands fa-instagram footer__links-icon"></i></a>
     </div>
+    <p class="footer__copyright">No 10 platinum street, off platinum way, adjacent Eros hotel and suite jakunde, 1st gate off lekki epe express way lagos island.</p>
     <p class="footer__copyright">de-domsglobal 2022 &copy;</p>
   </footer>
 </template>
@@ -88,7 +89,12 @@
   }
 
   &__copyright{
+    padding: 1em 10vmin 0 10vmin;
     color: var(--color-footer-icon);
+
+    &:nth-of-type(1){
+      color: inherit;
+    }
   }
 
   &__text{

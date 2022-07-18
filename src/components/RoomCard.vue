@@ -1,7 +1,8 @@
 <script setup>
 
 defineProps({
-  index: Number
+  index: Number,
+  detail: Object
 });
 
 function checkType(index){
@@ -24,17 +25,17 @@ function checkType(index){
     }
     ]" >
     <div class="card__item">
-      <img src="../assets/back2.jpeg" alt="" class="card__item card__image">
+      <img :src="detail.url" alt="" class="card__item card__image">
     </div>
     <div :class="['card__item', 'card__text', {'oddText': checkType(index)}]">
-      <h2 class="text--subheader">Room Type</h2>
+      <h2 class="text--subheader">{{ detail.title }}</h2>
       <p class="card__text-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam facere optio deserunt voluptatum ipsum saepe minus blanditiis eos mollitia eaque exercitationem expedita fugit ea excepturi quo accusamus, alias libero perferendis!</p>
       <br />
-    <div class="card__price">
-      <p class="card__price-tag">&#8358;150000</p>
-    </div>
-    <br />
-      <a href="https://wa.me/2348164648411?text=hello i want to book a room" target="blank" class="card__text-button">book now</a>
+    <!-- <div class="card__price"> -->
+    <!--   <p class="card__price-tag">&#8358;150000</p> -->
+    <!-- </div> -->
+    <!-- <br /> -->
+    <!--   <a href="https://wa.me/2348164648411?text=hello i want to book a room" target="blank" class="card__text-button">book now</a> -->
     </div>
   </div>
 </template>
@@ -44,7 +45,7 @@ function checkType(index){
   position: relative;
   width: 100%;
   display: flex;
-  height: 400px;
+  height: 350px;
   overflow: hidden;
   justify-content: center;
   background-color: rgba(200, 200, 200, 0.1);
