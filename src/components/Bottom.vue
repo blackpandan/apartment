@@ -7,7 +7,7 @@
     <div class="footer__upper">
     <div class="footer__about">
       <h3 class="text--subheader headingText footer__text--orange">About</h3>
-      <p class="text-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <p class="text-normal">Lorm ipsum dolor sit, amet consectetur adipisicing elit.</p>
     </div>
     <div class="footer__nav">
       <p class="text--subheader headingText footer__text--orange">Pages</p>
