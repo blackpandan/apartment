@@ -7,7 +7,16 @@
     <div class="footer__upper">
     <div class="footer__about">
       <h3 class="text--subheader headingText footer__text--orange">About</h3>
-      <p class="text-normal">Lorm ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <p class="text-normal">We go the extra mile to ensure 💯 hospitality and comfort to give you value for your money (De Doms we dominate )</p>
+      <br>
+      <p>Services we render</p>
+      <p>Serviced apartment(doms apartment)</p>
+      <p>Interior decoration ( doms interior )</p>
+      <p>Property sales (doms property)</p> 
+      <p>Tanker rentals and supplies(doms oil and gas)</p>
+      <br>
+      <p>We are De Doms global🥂</p>
+      <br>
     </div>
     <div class="footer__nav">
       <p class="text--subheader headingText footer__text--orange">Pages</p>
@@ -21,6 +30,7 @@
       <a href="https://www.instagram.com/de_doms_apartment/" target="blank" class="footer__links-link"><i class="fa-brands fa-instagram footer__links-icon"></i></a>
     </div>
     <p class="footer__copyright">No 10 platinum street, off platinum way, adjacent Eros hotel and suite jakunde, 1st gate off lekki epe express way lagos island.</p>
+    <p class="footer__copyright">telephone: 08164648411</p>
     <p class="footer__copyright">de-domsglobal 2022 &copy;</p>
   </footer>
 </template>
@@ -48,7 +58,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 4vw 0 4vw;
+    padding: 0 10vmin 0 10vmin;
     text-align: center;
   }
 
@@ -92,7 +102,7 @@
     padding: 1em 10vmin 0 10vmin;
     color: var(--color-footer-icon);
 
-    &:nth-of-type(1){
+    &:nth-of-type(1), &:nth-of-type(2){
       color: inherit;
     }
   }
