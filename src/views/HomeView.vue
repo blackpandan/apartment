@@ -78,7 +78,7 @@ onMounted(()=>{
       Interior design (doms interiors),
       Property sales ( doms properties ),
       Tanker rentals and supplies (doms oil and gas)</p>
-      <a href="#roomsHeader" id="slideButton" class="slideshow__button">check rooms</a>
+      <a href="#showOff" id="slideButton" class="slideshow__button">check rooms</a>
     </section>
 
     <section class="top">
@@ -111,7 +111,7 @@ We go the extra mile to ensure hospital and comfort to give you value for your m
 <!-- <p>Dstv</p> --> 
     </section>
   
-    <section class="showOff">
+    <section class="showOff" id="showOff">
       <div class="showOff__box">
      <img class="showOff__one showOff__image" src="../assets/snooker.jpg" alt=""> 
      <img class="showOff__two showOff__image" src="../assets/back.jpeg" alt=""> 
