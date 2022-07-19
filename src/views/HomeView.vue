@@ -91,10 +91,10 @@ We go the extra mile to ensure hospital and comfort to give you value for your m
       </p>
       <br>
       <br>
-<h2 class="text--subheader2">
+<h2 class="text--subheader2" id="serviceHeader">
       OUR SERVICES:
 </h2>
-<p>All rooms en-suit, 24/7 power supply, Top notch security, Smart TV, Unlimited WiFi access, Dstv, Cable access, Well fitted kitchen, Washing machine, Modern furnishings, Fully air conditioned, Daily house keeping service, Secure parking space and ON Site maintenance.
+<p id="serviceText">All rooms en-suit, 24/7 power supply, Top notch security, Smart TV, Unlimited WiFi access, Dstv, Cable access, Well fitted kitchen, Washing machine, Modern furnishings, Fully air conditioned, Daily house keeping service, Secure parking space and ON Site maintenance.
 </p>
 <!-- <p>Daily house keeping service</p> --> 
 <!-- <p>Secure parking space and</p> -->

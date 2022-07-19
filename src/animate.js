@@ -44,7 +44,7 @@ const runAnimation = ()=>{
     }
   );
 
-  gsap.fromTo(['#topHeader', '#topSub', '#topText'], 
+  gsap.fromTo(['#topHeader', '#topSub', '#topText', '#serviceHeader', '#serviceText'], 
     {
       y: 200,
       opacity: 0,
