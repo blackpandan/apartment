@@ -29,7 +29,7 @@ function checkType(index){
     </div>
     <div :class="['card__item', 'card__text', {'oddText': checkType(index)}]">
       <h2 class="text--subheader">{{ detail.title }}</h2>
-      <p class="card__text-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam facere optio deserunt voluptatum ipsum saepe minus blanditiis eos mollitia eaque exercitationem expedita fugit ea excepturi quo accusamus, alias libero perferendis!</p>
+      <p class="card__text-info">{{ detail.description }}</p>
       <br />
     <!-- <div class="card__price"> -->
     <!--   <p class="card__price-tag">&#8358;150000</p> -->

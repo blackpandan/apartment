@@ -8,20 +8,24 @@
 
 const listOfDetails = [
   {
-    title: "kitchen",
-    url: getImageUrl("kitchen", "jpg")
+    title: "Interior design and renovation",
+    description: "We faciltate corporate and domestic interiors decoration projects ,with latest modern designs to meet the five stars  standards ,to give you that taste of luxury and comfort.",
+    url: getImageUrl("interior", "jpeg")
   },
   {
-    title: "Bedroom",
-    url: getImageUrl("room", "jpg")
+    title: "De-doms properties",
+    description: "specialising in sales of real estate properties all over Nigeria, we bring you the best real estate deals both buying and selling at a very friendly price",
+    url: getImageUrl("properties", "jpeg")
   },
   {
-    title: "Sitting",
+    title: "Serviced Apartments",
+    description: "Expert in luxury serviced apartments with free WiFi, snooker games, 24 hour power supply, and top-notch security for both short and long stays.",
     url: getImageUrl("sitting", "jpg")
   },
   {
-    title: "Dinning",
-    url: getImageUrl("dinning", "jpg")
+    title: "Tanker rental and supplies.",
+    description: "transportation of crude oil end products (PMS Diseal ,kerosene) to diffrent state directly from depot.",
+    url: getImageUrl("tanker", "jpeg")
   },
 ]
 
@@ -90,7 +94,8 @@ We go the extra mile to ensure hospital and comfort to give you value for your m
 <h2 class="text--subheader2">
       OUR SERVICES:
 </h2>
-<p></p>All rooms en-suit, 24/7 power supply, Top notch security, Smart TV, Unlimited WiFi access, Dstv, Cable access, Well fitted kitchen, Washing machine, Modern furnishings, Fully air conditioned, Daily house keeping service, Secure parking space and ON Site maintenance.
+<p>All rooms en-suit, 24/7 power supply, Top notch security, Smart TV, Unlimited WiFi access, Dstv, Cable access, Well fitted kitchen, Washing machine, Modern furnishings, Fully air conditioned, Daily house keeping service, Secure parking space and ON Site maintenance.
+</p>
 <!-- <p>Daily house keeping service</p> --> 
 <!-- <p>Secure parking space and</p> -->
 <!-- <p>Unlimited WiFi access</p> --> 
@@ -108,14 +113,14 @@ We go the extra mile to ensure hospital and comfort to give you value for your m
   
     <section class="showOff">
       <div class="showOff__box">
-     <img class="showOff__one showOff__image" src="../assets/back.jpeg" alt=""> 
-     <img class="showOff__two showOff__image" src="../assets/back2.jpeg" alt=""> 
-     <img class="showOff__three showOff__image" src="../assets/back.jpeg" alt=""> 
-     <img class="showOff__four showOff__image" src="../assets/back2.jpeg" alt=""> 
+     <img class="showOff__one showOff__image" src="../assets/snooker.jpg" alt=""> 
+     <img class="showOff__two showOff__image" src="../assets/back.jpeg" alt=""> 
+     <img class="showOff__three showOff__image" src="../assets/dinning.jpg" alt=""> 
+     <img class="showOff__four showOff__image" src="../assets/kitchen.jpg" alt=""> 
       </div>
     </section>
 
-    <h3 id="roomsHeader" class="rooms__header headingText">Available Rooms</h3>
+    <h3 id="roomsHeader" class="rooms__header headingText">Other Services</h3>
     <section id="rooms" class="rooms">
       <RoomCard v-for="detail, index in listOfDetails" :detail="detail" :index="index"/>
     </section>
@@ -136,6 +141,8 @@ We go the extra mile to ensure hospital and comfort to give you value for your m
 
     &--subheader{
       font-size: calc(1em + 1vmin);
+      line-height: calc(1em + 0.5vmin);
+      padding: 0 0 2vh 0;
 
     }
 
@@ -164,7 +171,6 @@ We go the extra mile to ensure hospital and comfort to give you value for your m
 
   .showOff{
     width: 90%;
-    height: 50vh;
     margin: 0 0 15vh 0;
 
     &__box{
@@ -175,7 +181,7 @@ We go the extra mile to ensure hospital and comfort to give you value for your m
     grid-template-areas: "one one two two"
                         "one one three four";
     grid-template-columns: repeat(4, 25%);
-    grid-template-rows: 25vh 25vh;
+    grid-template-rows: 27vh 27vh;
     gap: 1em 1em;
 
     }
@@ -192,6 +198,7 @@ We go the extra mile to ensure hospital and comfort to give you value for your m
 
     &__two{
       grid-area: two;
+      object-position: bottom center;
     }
     
     &__three{
